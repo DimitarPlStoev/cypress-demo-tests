@@ -1,6 +1,5 @@
 const locators = require("../github_page_objects/github-locators");
 
-
 //Log in using wrong credentials
 export function logInWithWrongCredentials(
   invalidName,
