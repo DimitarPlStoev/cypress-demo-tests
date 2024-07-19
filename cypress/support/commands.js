@@ -1,25 +1,25 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+// const { isEmpty } = require("cypress/types/lodash");
+const locators = require("./github_page_objects/github-locators");
+
+//-----GitHub tests-----
+//LogIn with a valid credentials for the GitHub tests
+Cypress.Commands.add("logIn", (user, pw) => {
+  cy.visit("/");
+  cy.get(locators.INPUT_LOGIN_USER).should("be.visible");
+  cy.get(locators.INPUT_LOGIN_USER).type(Cypress.env("GITHUB_USERNAME"));
+  cy.get(locators.INPUT_LOGIN_PASSWORD).type(Cypress.env("GITHUB_PASSWORD"), {
+    log: false,
+  });
+  cy.get(locators.SIGN_IN_BUTTON).click();
+  cy.get(".AppHeader-context-item").contains("Dashboard").and("be.visible");
+});
+
+//Save the token to local storage
+Cypress.Commands.add("saveGithubToken", (token) => {
+  window.localStorage.setItem("github_token", token);
+  //Verifies that the token was correctly stored
+  cy.window().then((window) => {
+    const savedToken = window.localStorage.getItem("github_token");
+    expect(savedToken).to.equal(token);
+  });
+});

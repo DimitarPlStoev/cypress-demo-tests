@@ -1,5 +1,9 @@
 {
   "devDependencies": {
     "cypress": "^13.13.1"
+  },
+  "dependencies": {
+    "@types/lodash": "^4.17.7",
+    "lodash": "^4.17.21"
   }
 }
