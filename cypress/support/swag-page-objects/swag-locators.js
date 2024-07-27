@@ -17,3 +17,6 @@ export const POST_CODE_INPUT_CHECKOUT = "#postal-code";
 export const FINISH_BUTTON = "#finish";
 export const MESSAGE_FOR_CHECKOUT = '[data-test="complete-header"]';
 export const GO_BACK_TO_PRODUCTS_BUTTON = '[data-test="back-to-products"]';
+export const PRODUCT_SORT_DROPDOWN = '.product_sort_container';
+export const INVENTORY_ITEM_PRICE = '.inventory_item_price';
+export const INVENTORY_ITEM_NAME = '.inventory_item_name';

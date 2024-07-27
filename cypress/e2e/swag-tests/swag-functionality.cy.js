@@ -15,7 +15,15 @@ describe("Testing basic functionalities in Swag application ", () => {
     swagsuit.addToCart();
     swagsuit.removeItemFromCart();
     swagsuit.checkOut();
-    swagsuit.sortItems()
-    // cy.logout();
+    cy.logout();
+  });
+
+  it("Testing the sorting functionality", () => {
+    cy.loginSwag();
+    swagsuit.sortItemsAtoZ()
+    swagsuit.sortItemsZtoA()
+    swagsuit.sortItemsPriceLowToHigh()
+    swagsuit.sortItemsPriceHighToLow()
+    cy.logout();
   });
 });

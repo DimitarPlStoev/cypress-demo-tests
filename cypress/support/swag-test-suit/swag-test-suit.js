@@ -99,32 +99,42 @@ export function checkOut() {
     });
 }
 
-export function sortItems() {
-    cy.get('.product_sort_container').select('Name (A to Z)')
-    cy.get('.inventory_item_name').then(items => {
-      const sortedItems = [...items].map(item => item.innerText).sort()
-      const displayedItems = [...items].map(item => item.innerText)
-      expect(displayedItems).to.deep.equal(sortedItems)
+//Testing the sorting functionality from A to Z 
+export function sortItemsAtoZ() {
+    cy.get(swaglocators.PRODUCT_SORT_DROPDOWN).select('Name (A to Z)')
+    cy.get(swaglocators.INVENTORY_ITEM_NAME).then(items => {
+        const sortedItems = [...items].map(item => item.innerText).sort()
+        const displayedItems = [...items].map(item => item.innerText)
+        expect(displayedItems).to.deep.equal(sortedItems)
     })
+}
 
-    cy.get('.product_sort_container').select('Name (Z to A)')
-    cy.get('.inventory_item_name').then(items => {
-      const sortedItems = [...items].map(item => item.innerText).sort().reverse()
-      const displayedItems = [...items].map(item => item.innerText)
-      expect(displayedItems).to.deep.equal(sortedItems)
+//Testing the sorting functionality from Z to A
+export function sortItemsZtoA() {
+    cy.get(swaglocators.PRODUCT_SORT_DROPDOWN).select('Name (Z to A)')
+    cy.get(swaglocators.INVENTORY_ITEM_NAME).then(items => {
+        const sortedItems = [...items].map(item => item.innerText).sort().reverse()
+        const displayedItems = [...items].map(item => item.innerText)
+        expect(displayedItems).to.deep.equal(sortedItems)
     })
+}
 
-    cy.get('.product_sort_container').select('Price (low to high)')
-    cy.get('.inventory_item_price').then(items => {
-      const sortedItems = [...items].map(item => parseFloat(item.innerText.replace('$', ''))).sort((a, b) => a - b)
-      const displayedItems = [...items].map(item => parseFloat(item.innerText.replace('$', '')))
-      expect(displayedItems).to.deep.equal(sortedItems)
+//Testing the sorting functionality by price from low to high
+export function sortItemsPriceLowToHigh() {
+    cy.get(swaglocators.PRODUCT_SORT_DROPDOWN).select('Price (low to high)')
+    cy.get(swaglocators.INVENTORY_ITEM_PRICE).then(items => {
+        const sortedItems = [...items].map(item => parseFloat(item.innerText.replace('$', ''))).sort((a, b) => a - b)
+        const displayedItems = [...items].map(item => parseFloat(item.innerText.replace('$', '')))
+        expect(displayedItems).to.deep.equal(sortedItems)
     })
+}
 
-    cy.get('.product_sort_container').select('Price (high to low)')
-    cy.get('.inventory_item_price').then(items => {
-      const sortedItems = [...items].map(item => parseFloat(item.innerText.replace('$', ''))).sort((a, b) => b - a)
-      const displayedItems = [...items].map(item => parseFloat(item.innerText.replace('$', '')))
-      expect(displayedItems).to.deep.equal(sortedItems)
+//Testing the sorting functionality by price from high to low 
+export function sortItemsPriceHighToLow() {
+    cy.get(swaglocators.PRODUCT_SORT_DROPDOWN).select('Price (high to low)')
+    cy.get(swaglocators.INVENTORY_ITEM_PRICE).then(items => {
+        const sortedItems = [...items].map(item => parseFloat(item.innerText.replace('$', ''))).sort((a, b) => b - a)
+        const displayedItems = [...items].map(item => parseFloat(item.innerText.replace('$', '')))
+        expect(displayedItems).to.deep.equal(sortedItems)
     })
 }
