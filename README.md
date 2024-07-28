@@ -1,4 +1,25 @@
-# cypress-demo-tests
+# Cypress Test Automation
+
+This repository contains automated tests written using [Cypress](https://www.cypress.io/). Follow the steps below to set up and run the tests.
+
+## Prerequisites
+Before you begin, ensure you have the following installed:
+1. **Download  Visual Studio** https://code.visualstudio.com/download
+2. [Node.js](https://nodejs.org/) (version 12 or higher): If you don't already have Homebrew installed, open your Terminal and paste the following command:
+-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+-  brew install node
+-  node -v
+-  npm -v
+3. [npm](https://www.npmjs.com/) (comes with Node.js) ^^
+4. **Clone the repository:**
+-  git clone https://github.com/DimitarPlStoev/cypress-demo-tests.git
+-  open the repo with VS Code
+5. **Install dependencies** : npm install
+6. **Install Cypress** : npm install cypress --save-dev
+7. **RUN** : npx cypress open 
+8. When Cypress opens its browser, navigate to E2E testing, select the browser(in thes case Chrome), and select wich tests do you want to run
+
+
 --------------------------------------------------------------------GitHub Test Plan and Test Caces-----------------------------------------------------------------
 ## Test Plan for GitHub Functionalities
 This test plan outlines the testing process for verifying the functionalities of GitHub, particularly focusing on testing in the Chrome browser. The functionalities covered include logging in with wrong credentials, logging in with empty inputs, logging in successfully, creating public and private repositories, checking repositories in the dashboard list, creating a new branch in a private repository, and deleting a private repository.
