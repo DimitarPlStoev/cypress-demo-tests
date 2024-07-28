@@ -87,6 +87,7 @@ export function checkReposInDashboardList(repoOne, repoTwo) {
     });
 }
 
+//Creating new branch in the private repo
 export function createNewBranchPrivateRepo(branchName) {
   cy.logIn();
   cy.contains(locators.PRVATE_REPO_LINK_DASBOARD_SIDEBARE).click({
@@ -106,6 +107,7 @@ export function createNewBranchPrivateRepo(branchName) {
     .click({ force: true });
 }
 
+//Deleting the private repo with the branch in it
 export function deletePrivateRepository() {
   cy.logIn();
   cy.visit("https://github.com/github-demo-test-1/Private-repo");

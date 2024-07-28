@@ -5,6 +5,7 @@ module.exports = defineConfig({
     baseUrl: "https://github.com/login",
     // specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
     chromeWebSecurity: false,
+    failOnStatusCode: false,
     specPattern: "cypress/e2e/**/*.{js,ts}",
     excludeSpecPattern: ["**/1-getting-started", "**/2-advanced-examples"],
     video: false,

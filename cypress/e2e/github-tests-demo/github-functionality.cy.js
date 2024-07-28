@@ -23,11 +23,8 @@ describe("Testing basic functionalities in GitHub.com ", () => {
     cy.logIn();
   });
 
-  it("Create Public repository", () => {
+  it("Create Public and Private repository functionality", () => {
     githubsuit.createPublicRepository("Public-repo", "Creating public repo");
-  });
-
-  it("Create Private repository", () => {
     githubsuit.createPrivateRepository("Private-repo", "Creating private repo");
   });
 
@@ -38,11 +35,8 @@ describe("Testing basic functionalities in GitHub.com ", () => {
     );
   });
 
-  it("Create new branch in the private repo", () => {
+  it("Create new branch in the private repo and delete the repo functionality", () => {
     githubsuit.createNewBranchPrivateRepo("Branch one");
-  });
-
-  it("Create new branch in the private repo", () => {
     githubsuit.deletePrivateRepository();
   });
 });
