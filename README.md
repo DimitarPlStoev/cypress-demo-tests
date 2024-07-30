@@ -18,7 +18,7 @@ Before you begin, ensure you have the following installed:
 6. **Install Cypress** : npm install cypress --save-dev
 7. **RUN** : npx cypress open 
 8. When Cypress opens its browser, navigate to E2E testing, select the browser(in thes case Chrome), and select wich tests do you want to run
-
+9. You can run Docker container with all the tests runing using this scripts in the termilan : run -->  docker build -t my-cypress-tests . <--    and then run --> docker run -it my-cypress-tests <-- 
 
 --------------------------------------------------------------------GitHub Test Plan and Test Caces-----------------------------------------------------------------
 ## Test Plan for GitHub Functionalities
