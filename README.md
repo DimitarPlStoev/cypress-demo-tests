@@ -14,8 +14,8 @@ Before you begin, ensure you have the following installed:
 4. **Clone the repository:**
 -  git clone https://github.com/DimitarPlStoev/cypress-demo-tests.git
 -  open the repo with VS Code
-5. **Install dependencies** : npm install
-6. **Install Cypress** : npm install cypress --save-dev
+5. **Install Cypress** : npm install cypress --save-dev
+6. **Install dependencies** : npm install
 7. **RUN** : npx cypress open 
 8. When Cypress opens its browser, navigate to E2E testing, select the browser(in thes case Chrome), and select wich tests do you want to run
 9. You can run Docker container with all the tests runing using this scripts in the termilan : run -->  docker build -t my-cypress-tests . <--    and then run --> docker run -it my-cypress-tests <-- 
