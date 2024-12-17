@@ -6,7 +6,7 @@ describe("Testing basic functionalities in Swag application ", () => {
   it("Checking the log in with different users to check the behavior and to check that we can see the six default products in the list", () => {
     swagsuit.loginOtherUsers();
     cy.loginSwag();
-    swagsuit.checkproductList();
+    swagsuit.checkproductList(6);
     cy.logout();
   });
 
@@ -14,7 +14,8 @@ describe("Testing basic functionalities in Swag application ", () => {
     cy.loginSwag();
     swagsuit.addToCart();
     swagsuit.removeItemFromCart();
-    swagsuit.checkOut();
+    swagsuit.checkOutErrorMessage();
+    swagsuit.checkOut("Ivan", "Ivanov", "12345");
     cy.logout();
   });
 

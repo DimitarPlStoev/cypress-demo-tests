@@ -7,7 +7,7 @@ export const MENU = "#react-burger-menu-btn";
 export const LOGOUT_BUTTON = "#logout_sidebar_link";
 export const ERROR_MESSAGE = '[data-test="error"]';
 export const LIST_WITH_ITEMS = '[data-test="inventory-item"]';
-export const CART_LIST = '[data-test="cart-list"]';
+export const INVENTORY_ITEM = '[data-test="inventory-item"]';
 export const SHOPPING_CART_LINK = '[data-test="shopping-cart-link"]';
 export const CHECKOUT_BUTTON = "#checkout";
 export const CONTINUE_BUTTON = "#continue";
